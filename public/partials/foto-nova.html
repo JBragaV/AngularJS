@@ -1,0 +1,33 @@
+<p class="alert alert-info" ng-show = 'mensagem.length'>{{ mensagem }}</p>
+<div class="page-header text-center">
+    <h1>{{foto.titulo}}</h1>
+</div>
+<form novalidate name="formulario" ng-submit = "enviar()" class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Título</label>
+            <input name="titulo" class="form-control" ng-model="foto.titulo" ng-maxlength='20' required>    
+            <span class="form-control alert-danger" ng-show="formulario.$submitted && formulario.titulo.$error.required">Esse campo é obrigatório!!!</span>
+            <span class="form-control alert-danger" ng-show="formulario.$submitted && formulario.titulo.$error.maxlength">O Tamanho máximo de caracter é de 20</span>
+        </div>
+        <div class="form-group">
+            <label>URL</label>
+            <input name="url" class="form-control" ng-model="foto.url" required>
+            <span class="form-control alert-danger" ng-show="formulario.$submitted && formulario.url.$error.required">Esse campo é obrigatório!!!</span>
+        </div>
+        <div class="form-group">
+            <label>Descrição</label>
+            <textarea name="descricao" class="form-control" ng-model="foto.descricao">
+            </textarea>
+        </div>
+
+        <button ng-disabled="formulario.$invalid" type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+         <a href="/" class="btn btn-primary">Voltar</a>
+        <hr>
+    </div>
+    <div class="col-md-6">
+        <minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto>
+    </div>
+</form>

@@ -1,6 +1,6 @@
 angular.module('painel', []).directive('meuPainel', function(){
 
-    var ddo = {};
+    var ddo = {};//ddo= Definition Directive Object
 
     ddo.restric = "AE"//Podemos usar essa diretiva como atributo de um elemento html ou como um elemento.
 

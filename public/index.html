@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="jocimarpic">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Alurapic</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <script src="js/lib/angular.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/controllers/foto-controller.js"></script>
-        <script src="js/directives/painel-diretivas.js"></script>
-    </head>
 
-    <body ng-controller='FotoControler'>
-        <div class="container">
-            <div class="jumbotron">
-                <h1 class="text-center">Alurapic</h1>
-            </div>
-            <meu-painel ng-repeat="foto in fotos" titulo="{{ foto.titulo }}">
-                <img class="img-responsive center-block" src="{{foto.url}}">
-            </meu-painel><!-- fim panel panel-default -->
-        </div> <!-- fim container -->
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width">
+    <title>Alurapic</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/animacao.css">
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/fotos-controller.js"></script>
+    <script src="js/controllers/foto-controller.js"></script>
+    <script src="js/directives/painel-diretivas.js"></script>
+    <script src="js/directives/foto-diretivas.js"></script>
+    <script src="partials/principal.html"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Alurapic</h1>
+        </div>
+        <ng-view></ng-view>
+    </div> <!-- fim container -->
+</body>
+
 </html>

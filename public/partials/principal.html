@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <p class="alert alert-info" ng-show='mensagem.length'>{{ mensagem }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <a href="/foto/new" class="btn btn-primary" type="button">
+                    Nova foto
+                </a>
+            </span>
+            <form>
+                <input ng-model='filtro' ng-model-options="{debounce:500}" class="form-control"
+                    placeholder="filtrar pelo título da foto">
+            </form>
+        </div>
+        <!--Fim do input-group-->
+    </div>
+    <!--Fim da col-->
+</div>
+<!--Fim da row-->
+<div class="row">
+    <meu-painel class="col-md-2 meu-painel-animado" ng-repeat="foto in fotos | filter: {titulo: filtro}"
+        titulo="{{ foto.titulo }}">
+        <minha-foto url="{{ foto.url }}" titulo="{{ foto.titulo }}"></minha-foto>
+        <a href="/foto/edit/{{foto._id}}" class="btn btn-primary btn-block">Editar</a>
+        <button ng-click="deletar(foto)" class="btn btn-danger btn-block">Remover</button>
+    </meu-painel><!-- fim panel panel-default -->
+</div>
+<!--Fim da row-->
