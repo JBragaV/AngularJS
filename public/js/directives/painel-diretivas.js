@@ -13,4 +13,18 @@ angular.module('painel', []).directive('meuPainel', function(){
     ddo.templateUrl = 'js/directives/MeuPainel.html';
 
     return ddo;
+}).directive("botaoPerigo", function(){
+
+    var ddo = {};
+
+    ddo.restric = "E";
+
+    ddo.scope = {
+        etiqueta: "@",
+        acao: "&"
+    };
+
+    ddo.template = '<button ng-click="acao(foto)" class="btn btn-danger btn-block">{{etiqueta}}</button>';
+
+    return ddo;
 })

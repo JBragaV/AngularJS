@@ -1,4 +1,4 @@
-angular.module('jocimarpic', ['painel', 'ngAnimate', 'fotoDiretiva', 'ngRoute'])
+angular.module('jocimarpic', ['painel', 'ngAnimate', 'fotoDiretiva', 'ngRoute', 'meuServico'])
 .config(function($routeProvider, $locationProvider){
 
     $locationProvider.html5Mode(true);
