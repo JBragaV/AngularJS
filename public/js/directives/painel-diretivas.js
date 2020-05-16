@@ -27,4 +27,30 @@ angular.module('painel', []).directive('meuPainel', function(){
     ddo.template = '<button ng-click="acao(foto)" class="btn btn-danger btn-block">{{etiqueta}}</button>';
 
     return ddo;
+}).directive("meuFoco", function(){
+    var ddo = {};
+
+    ddo.restric = "A";
+
+    ddo.link = function(scope, elemento){
+        scope.$on('fotoCadastrada', function(){
+            elemento[0].focus();
+        })
+    }
+    return ddo;
+}).directive("meusTitulos", function(){
+    var ddo = {}
+
+    ddo.restric = "E";
+
+    ddo.template = '<ul><li ng-repeat="titulo in titulos">{{titulo}}</li></ul>';
+
+    ddo.controller = function($scope, servicoFotos){
+        servicoFotos.query(function(fotos){
+            $scope.titulos = fotos.map(function(foto) {
+                return foto.titulo;
+            });
+        })
+    }
+    return ddo;
 })

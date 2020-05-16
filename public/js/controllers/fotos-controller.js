@@ -1,4 +1,4 @@
-angular.module('jocimarpic').controller('FotosControler', function($scope,servicoFotos, $http){
+angular.module('jocimarpic').controller('FotosControler', function($scope,servicoFotos){
     $scope.fotos = [];
     $scope.filtro = '';
     $scope.mensagem = '';
